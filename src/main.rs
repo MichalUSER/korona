@@ -67,6 +67,8 @@ fn main() -> Result<(), minreq::Error> {
     ]));
     table1.printstd();
 
+    println!();
+
     let mut table2 = Table::new();
     table2.add_row(Row::new(vec![
         Cell::new(""),
