@@ -10,3 +10,4 @@ edition = "2018"
 minreq = { version = "2.5.1", features = ["https-rustls"] }
 scraper = "0.12.0"
 prettytable-rs = "0.8.0"
+colored = "2"

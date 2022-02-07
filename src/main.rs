@@ -1,3 +1,4 @@
+use colored::*;
 use prettytable::{Cell, Row, Table};
 use scraper::{Html, Selector};
 
@@ -52,16 +53,16 @@ fn main() -> Result<(), minreq::Error> {
     // TODO: fix colors
     table1.add_row(Row::new(vec![
         Cell::new(""),
-        Cell::new("\x1b[0;34mPribudlo testov"),
-        Cell::new("\x1b[0;36mPribudlo pozitývnych"),
+        Cell::new("Pribudlo testov".blue().to_string().as_str()),
+        Cell::new("Pribudlo pozitývnych".magenta().to_string().as_str()),
     ]));
     table1.add_row(Row::new(vec![
-        Cell::new("\x1b[0;34mPCR"),
+        Cell::new("PCR".magenta().to_string().as_str()),
         Cell::new(pcr_test_vec[1]),
         Cell::new(pcr_pozitivny_vec[1]),
     ]));
     table1.add_row(Row::new(vec![
-        Cell::new("\x1b[0;34mAG"),
+        Cell::new("AG".blue().to_string().as_str()),
         Cell::new(ag_test_vec[1]),
         Cell::new(ag_pozitivny_vec[1]),
     ]));
@@ -72,16 +73,16 @@ fn main() -> Result<(), minreq::Error> {
     let mut table2 = Table::new();
     table2.add_row(Row::new(vec![
         Cell::new(""),
-        Cell::new("\x1b[0;34mPribudlo"),
-        Cell::new("\x1b[0;36mCelkovo"),
+        Cell::new("Pribudlo".blue().to_string().as_str()),
+        Cell::new("Celkovo".magenta().to_string().as_str()),
     ]));
     table2.add_row(Row::new(vec![
-        Cell::new("\x1b[0;36mPrvá dávka"),
+        Cell::new("Prvá dávka".magenta().to_string().as_str()),
         Cell::new(first_vec[1]),
         Cell::new(dose_vec[1]),
     ]));
     table2.add_row(Row::new(vec![
-        Cell::new("\x1b[0;34mDruhá dávka"),
+        Cell::new("Druhá dávka".blue().to_string().as_str()),
         Cell::new(second_vec[1]),
         Cell::new(dose_vec[5]),
     ]));
